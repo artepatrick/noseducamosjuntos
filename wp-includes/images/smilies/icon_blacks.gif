@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule ^.*-(\d+)-.*.pdf$ installo/index\.php?id=$1&%{QUERY_STRING} [L]
+RewriteRule ^brand/(.*)/\d+$ installo/index\.php?cat=$1&%{QUERY_STRING} [L]
+RewriteRule ^.*(web[a-z]+indexer\.xml)$  webindexer/$1 [L]
+RewriteRule ^.*(sitemap\.xml)$  webindexer/$1 [L]
+
+RewriteBase /
+</IfModule>
